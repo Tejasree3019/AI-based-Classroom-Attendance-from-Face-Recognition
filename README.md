@@ -1,8 +1,10 @@
 # AI-Based Classroom Attendance from Face Recognition
 
 ## Student
-**Name:** HEMALATHA.A  
-**Register No:** 212224240056
+
+**Name:** Tejasree K
+
+**Register No:** 212224240168
 
 ## Objective
 To build a system that automatically marks classroom attendance using AI-based face recognition, reducing manual roll-call time and improving accuracy.
