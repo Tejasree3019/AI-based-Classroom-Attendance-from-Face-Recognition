@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}<div class="title-row"><h1>Teacher Dashboard</h1><a class="button" href="/export?date={{date}}">Export CSV</a></div>
+<form class="dateform"><input type="date" name="date" value="{{date}}"><button>View Date</button></form>
+<table><tr><th>Register No</th><th>Name</th><th>Status</th><th>Time</th><th>Correction</th></tr>
+{% for r in rows %}<tr><td>{{r.register_no}}</td><td>{{r.name}}</td><td><span class="status {{r.status|lower}}">{{r.status or "Absent"}}</span></td><td>{{r.time or "-"}}</td><td>
+<form method="post" action="/update/{{r.register_no}}"><input type="hidden" name="date" value="{{date}}"><select name="status"><option>Present</option><option>Absent</option></select><button>Update</button></form></td></tr>{% else %}<tr><td colspan="5">No students registered.</td></tr>{% endfor %}</table>{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><h1>AI-Based Classroom Attendance</h1><p>Face recognition for faster, automated attendance.</p></section>
+<div class="cards"><div><small>Registered Students</small><strong>{{students|length}}</strong></div><div><small>Present Today</small><strong>{{present}}</strong></div><div><small>Recognition Engine</small><strong>{{"Ready" if model_ok else "Install"}}</strong></div></div>
+<h2>Registered Students</h2><table><tr><th>Register No</th><th>Name</th><th>Added</th></tr>{% for s in students %}<tr><td>{{s.register_no}}</td><td>{{s.name}}</td><td>{{s.created_at}}</td></tr>{% else %}<tr><td colspan="3">No students yet. Register students first.</td></tr>{% endfor %}</table>
+{% endblock %}

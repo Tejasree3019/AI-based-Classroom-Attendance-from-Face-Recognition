@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block content %}<h1>Register Student</h1><p>Upload one clear, front-facing photo per student.</p>
+<form method="post" enctype="multipart/form-data" class="form"><label>Name<input name="name" required></label><label>Register Number<input name="register_no" required></label><label>Face Image<input type="file" name="image" accept="image/*" required></label><button>Register Student</button></form>{% endblock %}

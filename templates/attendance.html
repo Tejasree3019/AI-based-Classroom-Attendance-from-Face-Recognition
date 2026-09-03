@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}<h1>Mark Attendance</h1><p>Upload a classroom photo containing registered students.</p>
+{% if not model_ok %}<div class="alert danger">Install opencv-contrib-python to enable recognition.</div>{% endif %}
+<form method="post" enctype="multipart/form-data" class="form"><label>Classroom Photo<input type="file" name="classroom_image" accept="image/*" required></label><button>Recognize & Mark Attendance</button></form>
+<h2>Registered Students</h2><ul>{% for s in students %}<li>{{s.register_no}} — {{s.name}}</li>{% else %}<li>No students registered.</li>{% endfor %}</ul>{% endblock %}
